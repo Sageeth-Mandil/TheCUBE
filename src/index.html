@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>The CUBE</title>
+    <meta property="og:description" content="See if you can solve this classic puzzle game.">
+    <meta property="og:image" content="images/meta-image.png">
+    <meta property="og:site_name" content="The Cube - A Rubik's Cube Game">
+    <meta property="og:title" content="The Cube - A Rubik's Cube Game">
+    <meta property="og:type" content="website">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-128627708-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-128627708-1');
+    </script>
+
+    <script>
+        window.gameVersion = '1.0.0';
+    </script>
+
+
+</head>
+
+<body>
+    <div class="ui">
+
+        <div class="ui__background"></div>
+
+        <div class="ui__game"></div>
+
+        <div class="ui__texts">
+            <h1 class="text text--title">
+                <span>THE</span>
+                <span>CUBE</span>
+            </h1>
+            <div class="text text--note">
+                Double tap to start
+            </div>
+            <div class="text text--timer">
+                0:00
+            </div>
+            <div class="text text--complete">
+                <span>Complete!</span>
+            </div>
+            <div class="text text--best-time">
+                <icon trophy=""></icon>
+                <span>Best Time!</span>
+            </div>
+        </div>
+
+        <div class="ui__prefs">
+            <range name="size" title="Cube Size" list="2,3,4,5"></range>
+            <range name="flip" title="Flip Type" list="Swift &nbsp;,Smooth,Bounce"></range>
+            <range name="scramble" title="Scramble Length" list="20,25,30"></range>
+            <range name="fov" title="Camera Angle" list="Ortographic,Perspective"></range>
+            <range name="theme" title="Color Scheme" list="Cube,Erno,Dust,Camo,Rain"></range>
+        </div>
+
+        <div class="ui__theme">
+            <range name="hue" title="Hue" color=""></range>
+            <range name="saturation" title="Saturation" color=""></range>
+            <range name="lightness" title="Lightness" color=""></range>
+        </div>
+
+        <div class="ui__stats">
+            <div class="stats" name="cube-size">
+                <i>Cube:</i><b>3x3x3</b>
+            </div>
+            <div class="stats" name="total-solves">
+                <i>Total solves:</i><b>-</b>
+            </div>
+            <div class="stats" name="best-time">
+                <i>Best time:</i><b>-</b>
+            </div>
+            <div class="stats" name="worst-time">
+                <i>Worst time:</i><b>-</b>
+            </div>
+            <div class="stats" name="average-5">
+                <i>Average of 5:</i><b>-</b>
+            </div>
+            <div class="stats" name="average-12">
+                <i>Average of 12:</i><b>-</b>
+            </div>
+            <div class="stats" name="average-25">
+                <i>Average of 25:</i><b>-</b>
+            </div>
+        </div>
+
+        <div class="ui__buttons">
+            <button class="btn btn--bl btn--stats">
+                <icon trophy=""></icon>
+            </button>
+            <button class="btn btn--br btn--prefs">
+                <icon settings=""></icon>
+            </button>
+            <button class="btn btn--bl btn--back">
+                <icon back=""></icon>
+            </button>
+            <button class="btn btn--br btn--theme">
+                <icon theme=""></icon>
+            </button>
+            <button class="btn btn--br btn--reset">
+                <icon reset=""></icon>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="js/three.js"></script>
+    <script src="js/cube.js"></script>
+
+    <script src="js/upup.min.js"></script>
+    <script>
+        if (UpUp !== null) {
+            UpUp.start({
+                'cache-version': window.gameVersion,
+                'content-url': 'index.html',
+                'assets': ['assets/css/styles.css', 'assets/js/three.js', 'assets/js/cube.js']
+            });
+        }
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
